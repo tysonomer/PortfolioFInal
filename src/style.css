@@ -58,15 +58,12 @@ section {
 
 .square {
     width: 150px;
-    height: 150px;
+    height: 20vh;
     background-color: blue;
 }
 
-.square2 {
-    margin-top: 300px;
-    width: 150px;
-    height: 150px;
-    background-color: rgb(255, 153, 0);
+.red {
+    background-color: red;
 }
 
 .close-button {
