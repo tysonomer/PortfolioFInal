@@ -5,14 +5,16 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.to(".square", {
-    // x: 700,
-    duration: 3,
+    x: 1000,
+    duration: 8,
     scrollTrigger: {
         trigger: ".square",
-        start: "top 30%",
+        start: "top 80%",
+        scrub: 4,
         end: () => `+=${document.querySelector(".square").offsetHeight}`,
+        toggleActions: "restart none none none",
         markers: true,
-        toggleClass: "red",
+
     }
 })
 
