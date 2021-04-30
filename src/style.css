@@ -19,7 +19,7 @@ body {
     top: 0;
     left: 0;
     outline: none;
-    mix-blend-mode: exclusion;
+    /* mix-blend-mode: exclusion; */
 }
 
 .container {
@@ -32,8 +32,21 @@ h1 {
     font-size: 8rem;
     text-transform: uppercase;
     color: white;
+    z-index: 1;
+    margin-top: 12%;
+}
+
+h2 {
+    font-size: 2rem;
+    color: white;
+    z-index: 1;
+    margin-top: -38%;
 }
 
 section {
     height: 100vh;
+}
+
+.close-button {
+    display: none;
 }

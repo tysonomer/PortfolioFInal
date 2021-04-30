@@ -48,12 +48,12 @@ pointLight2.position.set(3.83, 0.8, -3.97)
 pointLight2.intensity = 10
 scene.add(pointLight2)
 
-const light1 = gui.addFolder('Light 1')
+// const light1 = gui.addFolder('Light 1')
 
-gui.add(pointLight2.position, 'x').min(-10).max(10).step(0.01)
-gui.add(pointLight2.position, 'y').min(-10).max(10).step(0.01)
-gui.add(pointLight2.position, 'z').min(-10).max(10).step(0.01)
-gui.add(pointLight2, 'intensity').min(-10).max(10).step(0.01)
+// gui.add(pointLight2.position, 'x').min(-10).max(10).step(0.01)
+// gui.add(pointLight2.position, 'y').min(-10).max(10).step(0.01)
+// gui.add(pointLight2.position, 'z').min(-10).max(10).step(0.01)
+// gui.add(pointLight2, 'intensity').min(-10).max(10).step(0.01)
 
 // const pointLightHelper = new THREE.PointLightHelper(pointLight2, 1)
 // scene.add(pointLightHelper)
@@ -63,24 +63,24 @@ pointLight3.position.set(-2.67, 5.27, -1.4)
 pointLight3.intensity = 10
 scene.add(pointLight3)
 
-const light2 = gui.addFolder('Light 2')
+// const light2 = gui.addFolder('Light 2')
 
-gui.add(pointLight3.position, 'x').min(-10).max(10).step(0.01)
-gui.add(pointLight3.position, 'y').min(-10).max(10).step(0.01)
-gui.add(pointLight3.position, 'z').min(-10).max(10).step(0.01)
-gui.add(pointLight3, 'intensity').min(-10).max(10).step(0.01)
+// gui.add(pointLight3.position, 'x').min(-10).max(10).step(0.01)
+// gui.add(pointLight3.position, 'y').min(-10).max(10).step(0.01)
+// gui.add(pointLight3.position, 'z').min(-10).max(10).step(0.01)
+// gui.add(pointLight3, 'intensity').min(-10).max(10).step(0.01)
 
 // const pointLightHelper2 = new THREE.PointLightHelper(pointLight3, 1)
 // scene.add(pointLightHelper2)
 
-const light2Color = {
-    color: 0xff0000
-}
+// const light2Color = {
+//     color: 0xff0000
+// }
 
-light2.addColor(light2Color, 'color')
-    .onChange(() => {
-        pointLight3.color.set(light2Color.color)
-    })
+// light2.addColor(light2Color, 'color')
+//     .onChange(() => {
+//         pointLight3.color.set(light2Color.color)
+//     })
 
 
 /**
@@ -149,6 +149,12 @@ let targetY = 0
 const windowX = window.innerWidth / 2;
 const windowY = window.innerHeight / 2;
 
+const updateSphere = (event) => {
+    sphere.position.y = window.scrollY * .001
+}
+
+window.addEventListener('scroll', updateSphere);
+
 const clock = new THREE.Clock()
 
 const tick = () => {
@@ -164,6 +170,8 @@ const tick = () => {
     sphere.rotation.y += .02 * (targetX - sphere.rotation.y)
     sphere.rotation.x += .02 * (targetY - sphere.rotation.x)
     sphere.rotation.z += .02 * (targetX - sphere.rotation.x)
+
+
 
     // Update Orbital Controls
     // controls.update()

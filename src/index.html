@@ -4,12 +4,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <title>Tyson Omer | Portfolio</title>
 </head>
 
 <body>
-
+    <div class="container">
+        <h1>Tyson Omer</h1>
+        <h2>Designer & Developer of Digital Experiences</h2>
+    </div>
     <canvas class="webgl"></canvas>
+    <section>
+
+    </section>
+
+    <div class="site-logo">mouthwash</div>
+    <div class="navbar">
+        <div class="site-info">photos / films</div>
+        <div class="site-menu">
+            <div class="menu-item">projects</div>
+            <div class="menu-item">about</div>
+            <div class="menu-item">contact</div>
+        </div>
+    </div>
+    <div class="showreel">view showreel</div>
+    <div class="container">
+        <div class="wrapper-img">
+            <div class="box"></div>
+            <div>
+                <img class="image" src="hero-img.jpeg" />
+            </div>
+        </div>
+        <div class="circle-shape"></div>
+        <div class="circle-shape-2"></div>
+        <div class="circle-shape-3"></div>
+        <div class="blocks">
+            <div class="block-1 block">F</div>
+            <div class="block-2 block">L</div>
+            <div class="block-3 block">E</div>
+            <div class="block-4 block">X</div>
+        </div>
+    </div>
+    <script>
+        TweenMax.to(".block-1", 2, {
+            x: "-180",
+            y: "-100",
+            scale: "2.4",
+            ease: Expo.easeInOut,
+        });
+
+        TweenMax.to(".block-2", 2, {
+            x: "-180",
+            y: "200",
+            scale: "1.2",
+            ease: Expo.easeInOut,
+        });
+
+        TweenMax.to(".block-3", 2, {
+            x: "180",
+            y: "-240",
+            scale: "1.6",
+            ease: Expo.easeInOut,
+        });
+
+        TweenMax.to(".block-4", 2, {
+            x: "280",
+            y: "240",
+            scale: "0.8",
+            ease: Expo.easeInOut,
+        });
+
+        TweenMax.to(".box", 2.4, {
+            y: "-100%",
+            ease: Expo.easeInOut,
+        });
+
+        TweenMax.from(".circle-shape", 2.4, {
+            scale: "0",
+            ease: Expo.easeInOut,
+        });
+        TweenMax.from(".circle-shape-2", 2.4, {
+            scale: "0",
+            ease: Expo.easeInOut,
+        });
+        TweenMax.from(".circle-shape-3", 2.4, {
+            scale: "0",
+            ease: Expo.easeInOut,
+        });
+        TweenMax.from(".navbar > div", 1.6, {
+            opacity: 0,
+            y: 60,
+            ease: Expo.easeInOut,
+            delay: 0.6,
+        });
+        TweenMax.from(".site-logo", 1.6, {
+            opacity: 0,
+            y: 40,
+            ease: Expo.easeInOut,
+            delay: 0.6,
+        });
+        TweenMax.from(".showreel", 1.6, {
+            opacity: 0,
+            y: 40,
+            ease: Expo.easeInOut,
+            delay: 0.6,
+        });
+        TweenMax.staggerFrom(
+            ".site-menu > div",
+            1, {
+                opacity: 0,
+                y: 60,
+                ease: Power2.easeOut,
+            },
+            0.2
+        );
+    </script>
 </body>
 
 </html>
