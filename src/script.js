@@ -2,7 +2,16 @@ import './style.css'
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
+gsap.to(".square", {
+    x: 700,
+    duration: 3,
+    ScrollTrigger: {
+        trigger: ".square",
+        start: 400
+    }
+})
 
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'

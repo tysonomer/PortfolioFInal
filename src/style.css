@@ -56,6 +56,19 @@ section {
     background: wheat;
 }
 
+.square {
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+}
+
+.square2 {
+    margin-top: 300px;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(255, 153, 0);
+}
+
 .close-button {
     display: none;
 }
