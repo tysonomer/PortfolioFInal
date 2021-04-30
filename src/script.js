@@ -16,7 +16,7 @@ gsap.to(".square", {
         end: () => `+=${document.querySelector(".square").offsetHeight}`,
         toggleActions: "restart none none none",
         markers: true,
-        pin: true,
+
 
 
     }
@@ -32,7 +32,7 @@ gsap.to(".square1", {
         end: () => `+=${document.querySelector(".square1").offsetHeight}`,
         toggleActions: "restart none none none",
         markers: true,
-
+        pin: true,
     }
 })
 
