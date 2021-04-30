@@ -5,12 +5,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.to(".square", {
-    x: 1000,
+    y: 1000,
     duration: 8,
     scrollTrigger: {
         trigger: ".square",
         start: "top 80%",
-        scrub: 4,
+        scrub: true,
         end: () => `+=${document.querySelector(".square").offsetHeight}`,
         toggleActions: "restart none none none",
         markers: true,
@@ -18,7 +18,20 @@ gsap.to(".square", {
     }
 })
 
+gsap.to(".square1", {
+    x: 1000,
+    duration: 8,
+    scrollTrigger: {
+        trigger: ".square1",
+        start: "top 80%",
+        scrub: true,
+        end: () => `+=${document.querySelector(".square1").offsetHeight}`,
+        toggleActions: "restart none none none",
+        markers: true,
+        pin: true,
 
+    }
+})
 
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'

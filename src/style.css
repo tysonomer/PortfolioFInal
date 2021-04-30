@@ -23,6 +23,7 @@ body {
     top: 0;
     left: 0;
     outline: none;
+    left: 19%
     /* mix-blend-mode: exclusion; */
 }
 
@@ -38,6 +39,7 @@ h1 {
     color: white;
     z-index: 1;
     margin-top: 12%;
+    margin-left: -10%;
 }
 
 h2 {
@@ -45,10 +47,11 @@ h2 {
     color: white;
     z-index: 1;
     margin-top: -38%;
+    margin-left: -10%;
 }
 
 section {
-    height: 100vh;
+    height: 30vh;
 }
 
 .div1,
@@ -61,9 +64,15 @@ section {
 }
 
 .square {
-    width: 150px;
-    height: 20vh;
+    width: 50vw;
+    height: 100vh;
     background-color: blue;
+}
+
+.square1 {
+    width: 80vw;
+    height: 100vh;
+    background-color: rgb(0, 119, 255);
 }
 
 .red {
