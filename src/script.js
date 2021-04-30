@@ -3,6 +3,11 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'dat.gui'
 
+//Laoding
+const textrureLoader = new THREE.TextureLoader()
+
+const normalTexture = textrureLoader.load('/textures/NormalMap2.png')
+
 // Debug
 const gui = new dat.GUI()
 
@@ -13,24 +18,70 @@ const canvas = document.querySelector('canvas.webgl')
 const scene = new THREE.Scene()
 
 // Objects
-const geometry = new THREE.TorusGeometry(.7, .2, 16, 100);
+const geometry = new THREE.SphereBufferGeometry(.5, 64, 64)
 
 // Materials
 
-const material = new THREE.MeshBasicMaterial()
-material.color = new THREE.Color(0xff0000)
+const material = new THREE.MeshStandardMaterial()
+material.metalness = 0.2
+material.roughness = 0.7
+material.normalMap = normalTexture;
+material.color = new THREE.Color(0x292929)
+
 
 // Mesh
 const sphere = new THREE.Mesh(geometry, material)
 scene.add(sphere)
 
+
+
+
+
 // Lights
 
 const pointLight = new THREE.PointLight(0xffffff, 0.1)
-pointLight.position.x = 2
-pointLight.position.y = 3
-pointLight.position.z = 4
+pointLight.position.set(2, 3, 4)
 scene.add(pointLight)
+
+const pointLight2 = new THREE.PointLight(0xff0000, 0.1)
+pointLight2.position.set(3.83, 0.8, -3.97)
+pointLight2.intensity = 10
+scene.add(pointLight2)
+
+const light1 = gui.addFolder('Light 1')
+
+gui.add(pointLight2.position, 'x').min(-10).max(10).step(0.01)
+gui.add(pointLight2.position, 'y').min(-10).max(10).step(0.01)
+gui.add(pointLight2.position, 'z').min(-10).max(10).step(0.01)
+gui.add(pointLight2, 'intensity').min(-10).max(10).step(0.01)
+
+// const pointLightHelper = new THREE.PointLightHelper(pointLight2, 1)
+// scene.add(pointLightHelper)
+
+const pointLight3 = new THREE.PointLight(0xf5, 2)
+pointLight3.position.set(-2.67, 5.27, -1.4)
+pointLight3.intensity = 10
+scene.add(pointLight3)
+
+const light2 = gui.addFolder('Light 2')
+
+gui.add(pointLight3.position, 'x').min(-10).max(10).step(0.01)
+gui.add(pointLight3.position, 'y').min(-10).max(10).step(0.01)
+gui.add(pointLight3.position, 'z').min(-10).max(10).step(0.01)
+gui.add(pointLight3, 'intensity').min(-10).max(10).step(0.01)
+
+// const pointLightHelper2 = new THREE.PointLightHelper(pointLight3, 1)
+// scene.add(pointLightHelper2)
+
+const light2Color = {
+    color: 0xff0000
+}
+
+light2.addColor(light2Color, 'color')
+    .onChange(() => {
+        pointLight3.color.set(light2Color.color)
+    })
+
 
 /**
  * Sizes
@@ -72,7 +123,8 @@ scene.add(camera)
  * Renderer
  */
 const renderer = new THREE.WebGLRenderer({
-    canvas: canvas
+    canvas: canvas,
+    alpha: true
 })
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
@@ -99,5 +151,7 @@ const tick = () => {
     // Call tick again on the next frame
     window.requestAnimationFrame(tick)
 }
+
+
 
 tick()
