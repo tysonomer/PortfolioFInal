@@ -47,6 +47,15 @@ section {
     height: 100vh;
 }
 
+.div1,
+.div2 {
+    height: 100vh;
+}
+
+.div2 {
+    background: wheat;
+}
+
 .close-button {
     display: none;
 }
